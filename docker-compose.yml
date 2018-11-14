@@ -1,0 +1,32 @@
+version: "3"
+services:
+    home:
+        build: .
+        image: google_home:1.0
+        container_name: google_home_ctr
+        ports:
+          - "3031:3031"
+        volumes:
+          - "./cnf/uwsgi.ini:/var/cnf/uwsgi.ini"
+          - "./www/:/var/www/"
+        command: uwsgi --ini /var/cnf/uwsgi.ini
+        networks:
+            ghome_net:
+                ipv4_address: 172.20.0.2
+    rd:
+        image: redis:4.0.10
+        container_name: redius_ctr
+        volumes:
+          - "./data/:/data/"
+        ports:
+          - "6377:6379"
+        networks:
+            ghome_net:
+                ipv4_address: 172.20.0.3
+networks:
+    ghome_net:
+        driver: bridge
+        ipam:
+            driver: default 
+            config: 
+            - subnet: 172.20.0.0/24 
