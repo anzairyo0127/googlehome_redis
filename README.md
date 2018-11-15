@@ -17,8 +17,8 @@ docker-compose up -d
 
 ```
 Creating network "ghome_default" with the default driver
-Creating google_home_ctr ... done
-Creating redius_ctr      ... done
+Creating google_home_container ... done
+Creating redius_container      ... done
 ```
 
 この時点でuwsgiが起動しております。以下のURLを開いてみてください。
@@ -63,11 +63,11 @@ docker-compose down
 以下のようなログが出力され、閉じられました。
 
 ```
-Stopping redius_ctr      ... done
-Stopping google_home_ctr ... done
-Removing redius_ctr      ... done
-Removing google_home_ctr ... done
-Removing network ghome_default
+Stopping redius_container      ... done
+Stopping google_home_container ... done
+Removing redius_container      ... done
+Removing google_home_container ... done
+Removing network googlehomeredis_ghome_net
 ```
 
 ## pythonイメージのモジュールを追加、変更する場合
