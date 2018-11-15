@@ -3,7 +3,7 @@ services:
     home:
         build: .
         image: google_home:1.0
-        container_name: google_home_ctr
+        container_name: google_home_container
         ports:
           - "3031:3031"
         volumes:
@@ -15,7 +15,7 @@ services:
                 ipv4_address: 172.20.0.2
     rd:
         image: redis:4.0.10
-        container_name: redius_ctr
+        container_name: redius_container
         volumes:
           - "./data/:/data/"
         ports:
