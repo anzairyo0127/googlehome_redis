@@ -15,10 +15,12 @@ docker-compose up -d
 
 以下のようなログが出ていれば成功しています。
 
+(Creating…の後の名称部分は多少異なるかもしれません。例えば名前が重複しているなど)
+
 ```
-Creating network "ghome_default" with the default driver
+Creating network "googlehomeredis_ghome_net" with driver "bridge"
+Creating redis_container       ... done
 Creating google_home_container ... done
-Creating redius_container      ... done
 ```
 
 この時点でuwsgiが起動しております。以下のURLを開いてみてください。
@@ -62,11 +64,13 @@ docker-compose down
 
 以下のようなログが出力され、閉じられました。
 
+(Stopping…やRemoving…の後の名称部分は多少異なるかもしれません。)
+
 ```
-Stopping redius_container      ... done
 Stopping google_home_container ... done
-Removing redius_container      ... done
+Stopping redis_container       ... done
 Removing google_home_container ... done
+Removing redis_container       ... done
 Removing network googlehomeredis_ghome_net
 ```
 
