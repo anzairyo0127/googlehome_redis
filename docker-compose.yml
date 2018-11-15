@@ -18,8 +18,6 @@ services:
         container_name: redius_container
         volumes:
           - "./data/:/data/"
-        ports:
-          - "6377:6379"
         networks:
             ghome_net:
                 ipv4_address: 172.20.0.3
