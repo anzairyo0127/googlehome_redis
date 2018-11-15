@@ -1,10 +1,8 @@
 '''
 単体テストプログラムになります。
-Redisを起動した状態なら問題なくプログラムは通るはずです。
 '''
 
 import unittest
-# from mock import Mock
 import page
 
 
@@ -25,15 +23,6 @@ class PyUnitTest(unittest.TestCase):
         '''
         response = self.app.get('/')
         self.assertEqual(b'Hello, World', response.data)
-
-    def test_redis(self):
-        '''
-        redis用のテストになります。
-        '''
-        response = self.app.get('/redis/1')
-        self.assertEqual(b'a', response.data)
-        response = self.app.get('/redis/0')
-        self.assertEqual(b'None', response.data)
 
 
 if __name__ == '__main__':
