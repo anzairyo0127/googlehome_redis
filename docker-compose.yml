@@ -15,7 +15,7 @@ services:
                 ipv4_address: 172.20.0.2
     rd:
         image: redis:4.0.10
-        container_name: redius_container
+        container_name: redis_container
         volumes:
           - "./data/:/data/"
         ports:
